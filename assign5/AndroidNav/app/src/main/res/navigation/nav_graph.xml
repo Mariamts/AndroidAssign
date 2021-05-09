@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.androidnav.fragments.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_jobsFragment"
+            app:destination="@id/jobsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.androidnav.fragments.DashboardFragment"
+        android:label="DashboardFragment"
+        tools:layout="@layout/fragment_dashboard">
+
+        <argument
+            android:name="amount"
+            android:defaultValue="-1"
+            app:argType="integer" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.androidnav.fragments.NotificationFragment"
+        android:label="NotificationFragment"
+        tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/jobsFragment"
+        android:name="com.example.androidnav.fragments.JobsFragment"
+        android:label="JobsFragment"
+        tools:layout="@layout/fragment_jobs">
+
+        <argument
+            android:name="job"
+            android:defaultValue="no"
+            app:argType="string" />
+
+    </fragment>
+
+
+</navigation>
