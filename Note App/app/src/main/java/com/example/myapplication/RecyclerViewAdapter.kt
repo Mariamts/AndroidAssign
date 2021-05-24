@@ -14,7 +14,7 @@ class RecyclerViewAdapter(private val list: ArrayList<NoteItem>) :
 
     inner class RecyclerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
-        private val lastnameTextView = itemView.findViewById<TextView>(R.id.description)
+        private val descTextView = itemView.findViewById<TextView>(R.id.description)
 
         init {
             if (clickListener != null) {
@@ -24,13 +24,9 @@ class RecyclerViewAdapter(private val list: ArrayList<NoteItem>) :
 
         fun bindNote(noteItem: NoteItem) {
 
-
-            lastnameTextView.text = noteItem.description
+            descTextView.text = noteItem.description
 
         }
-
-
-
 
 
         override fun onClick(v: View?) {
